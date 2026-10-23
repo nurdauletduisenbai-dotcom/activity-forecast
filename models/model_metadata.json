@@ -1,0 +1,49 @@
+{
+  "research_question": "Алдыңғы екі аптадағы деректер бойынша келесі аптаның оқу белсенділігін болжау",
+  "model": "Ridge",
+  "features": [
+    "week_t",
+    "prior_gpa",
+    "logins_w0",
+    "logins_w1",
+    "active_minutes_w0",
+    "active_minutes_w1",
+    "video_views_w0",
+    "video_views_w1",
+    "tasks_submitted_w0",
+    "tasks_submitted_w1",
+    "forum_posts_w0",
+    "forum_posts_w1",
+    "quiz_score_w0",
+    "quiz_score_w1",
+    "minutes_delta",
+    "minutes_mean2",
+    "next_is_deadline",
+    "next_is_holiday"
+  ],
+  "target": "next week active_minutes",
+  "split": {
+    "train_target_weeks": "3-12",
+    "val_target_weeks": "13-14",
+    "test_target_weeks": "15-16"
+  },
+  "test_metrics": {
+    "MAE": 38.785,
+    "RMSE": 50.871,
+    "R2": 0.6
+  },
+  "baseline_test_MAE": 44.551,
+  "risk_threshold_minutes": 90,
+  "risk_cutoff_on_prediction": 121.0,
+  "deadline_weeks": [
+    4,
+    8,
+    12,
+    15
+  ],
+  "holiday_weeks": [
+    10
+  ],
+  "sklearn_version": "1.9.1",
+  "seed": 42
+}
